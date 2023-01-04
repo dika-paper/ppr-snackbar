@@ -6,15 +6,21 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "serve:demo": "ng s snackbar-demo --port=9201 --open",
+    "build:lib": "ng b snackbar",
+    "build:lib:prod": "ng b snackbar --prod"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~10.2.5",
+    "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.2.5",
     "@angular/compiler": "~10.2.5",
     "@angular/core": "~10.2.5",
     "@angular/forms": "~10.2.5",
+    "@angular/material": "^10.2.7",
     "@angular/platform-browser": "~10.2.5",
     "@angular/platform-browser-dynamic": "~10.2.5",
     "@angular/router": "~10.2.5",
@@ -23,6 +29,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1002.4",
     "@angular/cli": "~10.2.4",
     "@angular/compiler-cli": "~10.2.5",
     "@types/node": "^12.11.1",
@@ -36,6 +43,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.5.0",
+    "ng-packagr": "^10.1.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
