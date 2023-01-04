@@ -12,6 +12,7 @@ import { PprSnackbarType } from './snackbar.component';
       [type]="data?.type"
       [titleText]="data?.title"
       [messageText]="data?.message"
+      (dismissEvent)="handleDismiss()"
     ></ppr-snackbar>
   `,
 })
