@@ -1,24 +1,50 @@
 # Snackbar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.5.
+## How To Install
+`npm i @paper-fe/ppr-snackbar`
 
-## Code scaffolding
+## How To Use
 
-Run `ng generate component component-name --project snackbar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project snackbar`.
-> Note: Don't forget to add `--project snackbar` or else it will be added to the default project in your `angular.json` file. 
+```
+// in your module
+...
+import { PprSnackbarModule } from  '@paper-fe/ppr-snackbar';
+...
 
-## Build
+@NgModule({
+    imports: [
+        ...
+        PprSnackbarModule,
+        ...
+    ],
+    ...
+})
+export class MyModule {}
 
-Run `ng build snackbar` to build the project. The build artifacts will be stored in the `dist/` directory.
+-------------------------------------
+    
+// in your component
+...
+import { PprSnackbarService } from  '@paper-fe/ppr-snackbar';
+...
 
-## Publishing
-
-After building your library with `ng build snackbar`, go to the dist folder `cd dist/snackbar` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test snackbar` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+@Component({
+    ...
+})
+export class MyComponent {
+    constructor(
+        ...
+        private pprSnackbar: PprSnackbarService,
+        ...
+    ) {}
+    
+    openSnackBar() {
+        this.pprSnackbar.openSnackbar({
+            message:  'Callback URL telah tersimpan.',
+            title:  'Berhasil',    
+            type:  'info', // 'info' | 'warning' | 'danger'.
+            duration: 7000 // additional duration (ms). default is 8000.
+        });
+    }
+}
+```
