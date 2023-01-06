@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PprSnackbarService } from 'snackbar';
+import { PprSnackbarService } from '@paper-fe/snackbar';
 
 @Component({
   selector: 'app-root',
