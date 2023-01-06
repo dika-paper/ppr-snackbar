@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PprSnackbarBase } from './snackbar-base.component';
+import { PprSnackbarContainerComponent } from './snackbar-container.component';
 import { PprSnackbarType } from './snackbar.component';
 
 @Injectable({
@@ -20,7 +20,7 @@ export class PprSnackbarService {
     type: PprSnackbarType;
     duration?: number;
   }) {
-    this._snackBar.openFromComponent(PprSnackbarBase, {
+    this._snackBar.openFromComponent(PprSnackbarContainerComponent, {
       duration: duration || 8000,
       verticalPosition: 'top',
       horizontalPosition: 'center',

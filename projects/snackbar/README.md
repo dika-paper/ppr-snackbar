@@ -30,6 +30,10 @@ import { PprSnackbarService } from  '@paper-fe/snackbar';
 
 @Component({
     ...
+    template: `
+        <button type="button" (click)="openSnackbar()">Open</button>
+    `,
+    ...
 })
 export class MyComponent {
     constructor(
@@ -38,7 +42,7 @@ export class MyComponent {
         ...
     ) {}
     
-    openSnackBar() {
+    openSnackbar() {
         this.pprSnackbar.openSnackbar({
             message:  'Put your snackbar message here.',
             title:  'A Title',    

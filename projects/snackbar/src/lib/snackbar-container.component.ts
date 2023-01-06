@@ -6,20 +6,14 @@ import {
 import { PprSnackbarType } from './snackbar.component';
 
 @Component({
-  selector: 'ppr-snackbar-base',
-  template: `
-    <ppr-snackbar
-      [type]="data?.type"
-      [titleText]="data?.title"
-      [messageText]="data?.message"
-      (dismissEvent)="handleDismiss()"
-    ></ppr-snackbar>
-  `,
+  selector: 'ppr-snackbar-container',
+  templateUrl: './snackbar-container.component.html',
+  styleUrls: ['./snackbar-container.component.scss']
 })
-export class PprSnackbarBase {
+export class PprSnackbarContainerComponent {
   constructor(
     @Inject(MAT_SNACK_BAR_DATA) public data: SnackbarData,
-    private ref: MatSnackBarRef<PprSnackbarBase>
+    private ref: MatSnackBarRef<PprSnackbarContainerComponent>
   ) {}
 
   handleDismiss() {
